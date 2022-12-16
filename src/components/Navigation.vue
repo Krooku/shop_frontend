@@ -5,7 +5,7 @@
     :style="{ width: activeWidth }"
   >
     <nav>
-      <h1>SARITAGUN</h1>
+      <h1>LOGO</h1>
       <router-link
         to="/"
         class="nav_item"

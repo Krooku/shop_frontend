@@ -54,6 +54,18 @@ const router = new Router({
       name: 'cart',
       meta: { adminNotRequired: true, loginNotRequired: false, blockIfLoggedIn: false },
       component: () => import(/* webpackChunkName: "cart" */ './views/Cart.vue')
+    },
+    {
+      path: '/tp',
+      name: 'tp',
+      meta: { adminNotRequired: true, loginNotRequired: true, blockIfLoggedIn: false },
+      component: () => import(/* webpackChunkName: "cart" */ './views/Transpol.vue')
+    },
+    {
+      path: '/tp2',
+      name: 'tp2',
+      meta: { adminNotRequired: true, loginNotRequired: true, blockIfLoggedIn: false },
+      component: () => import(/* webpackChunkName: "cart" */ './views/Transpol2.vue')
     }
   ]
 })
