@@ -63,14 +63,14 @@ export default {
       mz: '',
       dmh: '',
       rej: '',
-      ryczalt1: 120,
-      c1d2200do100: 4.3,
-      c2d2200pow100: 4.1,
-      ryczalt2: 150,
-      c1p2200dpdo100: 2.9,
-      c1p2200hdo100: 4.3,
-      c2p2200dppow100: 2.7,
-      c2p2200hpow100: 4.1,
+      ryczalt1: 220,
+      c1d2200do100: 5.6,
+      c2d2200pow100: 5.4,
+      ryczalt2: 260,
+      c1p2200dpdo100: 4,
+      c1p2200hdo100: 5.6,
+      c2p2200dppow100: 3.8,
+      c2p2200hpow100: 5.4,
       result: 0,
       restultString: ''
     }
@@ -103,7 +103,7 @@ export default {
       this.restultString += `Nr rej.: ${this.rej},\n`
       this.restultString += 'Rozliczenie kosztów: \n'
       this.result = 0
-      if (this.dmc <= 2200) {
+      if (this.dmc <= 2000) {
         // do dmc 2200
         let kms = this.holowanie
         // sprawdzanie po trojkacie
@@ -121,7 +121,7 @@ export default {
           this.copyStringToClipboard(this.restultString)
           return this.result
         }
-        if (kms <= 100) {
+        if (kms <= 200) {
           this.result += (kms - 30) * this.c1d2200do100
           this.restultString += `${kms - 30} km * ${this.c1d2200do100} zł netto = ${((kms - 30) * this.c1d2200do100).toFixed(2)} zł netto,\n`
           this.restultString += `Razem: ${this.result} zł netto.\n`
@@ -146,7 +146,7 @@ export default {
           return this.result
         }
         let dp = parseInt(this.dojazd) + parseInt(this.powrot)
-        if (kms <= 100) {
+        if (kms <= 200) {
           this.result += dp * this.c1p2200dpdo100
           this.result += this.holowanie * this.c1p2200hdo100
           this.restultString += `(Dojazd + Powrót): ${dp} km * ${this.c1p2200dpdo100} zł netto = ${(dp * this.c1p2200dpdo100).toFixed(2)} zł netto, \n`

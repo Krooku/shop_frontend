@@ -57,14 +57,14 @@ export default {
       mz: '',
       dmh: '',
       rej: '',
-      ryczalt1: 200,
-      c1d2200do100: 5,
-      c2d2200pow100: 4.8,
-      ryczalt2: 210,
-      c1p2200dpdo100: 3.6,
-      c1p2200hdo100: 5.2,
-      c2p2200dppow100: 3.4,
-      c2p2200hpow100: 5,
+      ryczalt1: 220,
+      c1d2200do100: 5.6,
+      c2d2200pow100: 5.4,
+      ryczalt2: 260,
+      c1p2200dpdo100: 4,
+      c1p2200hdo100: 5.6,
+      c2p2200dppow100: 3.8,
+      c2p2200hpow100: 5.4,
       result: 0,
       restultString: ''
     }
@@ -97,7 +97,7 @@ export default {
       this.restultString += `Nr rej.: ${this.rej},\n`
       this.restultString += 'Rozliczenie kosztów: \n'
       this.result = 0
-      if (this.dmc <= 2200) {
+      if (this.dmc <= 2000) {
         // do dmc 2200
         let kms = this.holowanie
         // sprawdzanie po trojkacie
